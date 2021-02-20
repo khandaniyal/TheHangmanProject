@@ -7,6 +7,6 @@ public class pruebaBranchGit {
 	
 	int res = x+y; // added from develop2
 	
-	System.out.println(res); //develop1 branch changed
+	System.out.println(res); // develop1 branch changed
   }
 }
