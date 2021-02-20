@@ -6,7 +6,8 @@ public class pruebaBranchGit {
 	int y = 5; //añadido desde la rama de develop1
 	
 	int res = x+y; // added from develop2
-	//comment added by develop2 branch	
+	//comment added by develop2 branch
+	//jeje
 	System.out.println(res); // develop1 branch changed
   }
 }
