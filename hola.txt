@@ -1,2 +1,9 @@
-hola // master
-adios // dani
+git checkout miquel // canvia a la meva branca
+
+
+git checkout master //canvia al general
+git pull origin master // es posa tot el q ha fet l'altre
+
+
+git push origin miquel // ho pujo al meu
+// es puja al meu i vaig al github i faig un MERGE per ajuntar les coses amb les del master
