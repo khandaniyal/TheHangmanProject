@@ -7,3 +7,62 @@ git pull origin master // es posa tot el q ha fet l'altre
 
 git push origin miquel // ho pujo al meu
 // es puja al meu i vaig al github i faig un MERGE per ajuntar les coses amb les del master
+
+
+
+
+-   -   -   -   -   -   -   -   -   -   -    -
+
+mostraFigura(int intentsDisponibles)
+    OBLIGATORI AL MAIN
+    
+- Utilstring  
+
+comprovar entre 'a' i 'z'
+    
+- funciones1
+
+utilitzades
+    base (cap)
+    lista de letras usadas
+
+introducir lletra
+leer letra nueva
+leer fichero
+
+contador
+    jugadas
+    acertadas
+    falladas
+    canceladas
+    xao
+        
+prou //se cancela (missatge contador)
+
+glups
+    +1 cancelat
+    següent paraula
+    
+    
+
+- funciones2
+
+mostrar figuras
+    si falla
+    si acierta
+
+array char
+    base *
+    añadir letras
+    
+intentos
+    10--
+    
+
+
+
+
+
+    
+    
+    
