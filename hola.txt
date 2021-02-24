@@ -10,7 +10,7 @@ git push origin miquel // ho pujo al meu
 
 
 per passarho al master
-git push origin miquel
+git checkout master
 git merge miquel
 git push origin master
 
@@ -54,12 +54,12 @@ mostrar figuras
     si falla
     si acierta
 
-array char
-    base *
-    añadir letras
+
     
 intentos
     10--
+    
+
     
 
 
