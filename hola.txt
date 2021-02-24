@@ -9,7 +9,10 @@ git push origin miquel // ho pujo al meu
 // es puja al meu i vaig al github i faig un MERGE per ajuntar les coses amb les del master
 
 
-
+per passarho al master
+git push origin miquel
+git merge miquel
+git push origin master
 
 -   -   -   -   -   -   -   -   -   -   -    -
 
