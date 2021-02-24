@@ -9,7 +9,10 @@ git push origin miquel // ho pujo al meu
 // es puja al meu i vaig al github i faig un MERGE per ajuntar les coses amb les del master
 
 
-
+per passarho al master
+git checkout master
+git merge miquel
+git push origin master
 
 -   -   -   -   -   -   -   -   -   -   -    -
 
@@ -51,12 +54,12 @@ mostrar figuras
     si falla
     si acierta
 
-array char
-    base *
-    añadir letras
+
     
 intentos
     10--
+    
+
     
 
 
