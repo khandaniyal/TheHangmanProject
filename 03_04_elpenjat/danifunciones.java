@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.io.*;
+
+
 public class danifunciones {
 	
 	public static boolean paraulaRandomActual(String randParaules, List<Character> characterInput){
