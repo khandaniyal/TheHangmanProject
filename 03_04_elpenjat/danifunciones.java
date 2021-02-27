@@ -18,7 +18,12 @@ public class danifunciones {
 		}
 	}
 	System.out.println();	
-	return (par.length() == contadorCorrectes); //devuelve true si acierta todos lo chars de la palabra
+	if(par.length() == contadorCorrectes){
+		return true;
+	}
+	else{
+		return false;
+	}
 	}
 
 	public static boolean adivinaJugador(BufferedReader entrada, String par, List<Character> characterInput) throws IOException{
@@ -27,6 +32,8 @@ public class danifunciones {
         	String adivinaLletra = entrada.readLine();  //input de las letras que vas a adivinar
         	characterInput.add(adivinaLletra.charAt(0)); //añade la primera letra del string al arraylist de chars
 		
+		utilitzades(characterInput);
+
 		if("prou".equals(adivinaLletra)){ //aún pensar lógica 
 			
 			return true;
@@ -34,12 +41,18 @@ public class danifunciones {
 		return false;
    	}
 
-	public static void utilitzades(String par, List<Character> characterInput)throws IOException{
-		
-
+	public static void utilitzades(List<Character> characterInput){
+	for(int i=0; i < characterInput.size(); i++){
+		if(characterInput.isEmpty()){
+			System.out.println("Utilitzades: cap");
+		}
+	}
+	
 	}	
 
-}
+}	
+
+
 /*for(int i = 0; i < args.length; i++){
 
                 if(i == args.length-2){
