@@ -4,6 +4,13 @@ import java.util.Random;
 import java.io.*; 
 public class penjatDani {
 	public static void main(String[] args)throws IOException {
+        int i_intents=10;
+        int i_jugades=0;
+        int i_encertades=0;
+        int i_fallades=0;
+        int i_cancelades=0;
+        
+        
 		BufferedReader entrada = new BufferedReader (new InputStreamReader (System.in)); //user input		
 	
 	BufferedReader path = new BufferedReader(new FileReader("recursos/paraules.txt")); //path de las palabras wey
@@ -25,15 +32,27 @@ public class penjatDani {
 	danifunciones.paraulaRandomActual(par, characterInput); //llamamos a la clase con la funcion donde va a ir sustituyendo los asterisks
 	
 	while(true){ //loopify
+        System.out.println("Comencem a jugar");
+        
 		if(danifunciones.adivinaJugador(entrada, par, characterInput)){
 			System.out.println("Mostrar las estadísticas");
-			break;
-		}
-		
+		}else{
+            funciones.mostraFigura(i_intents);
+        }
+        
 		if(danifunciones.paraulaRandomActual(par, characterInput)){	
+            i_encertades++;
 			System.out.println("Has encertat! La paraula era " + par);		
-			break;
-		}
+		}else{
+             i_fallades++;
+        }
+        
+        if(!danifunciones.paraulaRandomActual(par, characterInput)){
+            i_intentos--;
+        }
+        System.out.println("Intents disponibles: "+i_intentos);
+        
+        funciones.estadisticas(i_jugades,i_encertades,i_fallades,i_cancelades);
 	}
 
    }

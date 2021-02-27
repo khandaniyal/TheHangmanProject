@@ -30,14 +30,16 @@ public class funciones {
         input.close();
 
     }
-/* 
-   public static void intentos(char [] palabra, char letra) {
-
-        if(!contieneLetra(palabra, letra)){
-            i_intentos--;
-        }
+    
+    public static void estadisticas(int i_jugades, i_encertades,i_fallades,i_cancelades) {
+        System.out.println("Paraules jugades: "+i_jugades);
+        System.out.println("Paraules encertades: "+i_encertades);
+        System.out.println("Paraules fallades: "+i_fallades);
+        System.out.println("Paraules cancel·lades: "+i_cancelades);
+        System.out.println("Espero que t'hagis divertit");
+       
     }
-*/
+    
     public static boolean contieneLetra(char [] palabra, char letra) {
 
         for (int i = 0; i <= palabra.length; i++) {
