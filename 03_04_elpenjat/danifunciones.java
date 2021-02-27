@@ -1,68 +1,60 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.io.*;
-
-
-public class danifunciones {
-	
-	public static boolean paraulaRandomActual(String par, List<Character> characterInput){
-	System.out.print("Paraula: ");
-	int contadorCorrectes = 0;
-	for(int i=0; i < par.length(); i++){
-		if(characterInput.contains(par.charAt(i))){
-			System.out.print(par.charAt(i));
-			contadorCorrectes++;
+public class danifunciones {	
+	public static boolean paraulaActual(String par, List<Character> characterInput){
+		String output = "Paraula: ";
+		int contadorCorrectes = 0;
+		for(int i=0; i < par.length(); i++){
+			if(characterInput.contains(par.charAt(i))){
+				output += par.charAt(i);
+				contadorCorrectes++;
+			}
+			else{            
+				output += "*";
+			}
+		}
+		System.out.println(output);	
+		
+		if(par.length() == contadorCorrectes){
+			return true;
 		}
 		else{
-			System.out.print("*");
+			return false;
 		}
 	}
-	System.out.println();	
-	if(par.length() == contadorCorrectes){
-		return true;
-	}
-	else{
-		return false;
-	}
-	}
-
 	public static boolean adivinaJugador(BufferedReader entrada, String par, List<Character> characterInput) throws IOException{
-		
 		System.out.println("Introdueix una lletra");
         	String adivinaLletra = entrada.readLine();  //input de las letras que vas a adivinar
         	characterInput.add(adivinaLletra.charAt(0)); //añade la primera letra del string al arraylist de chars
+		//String elements = Character.toString(adivinaLletra.charAt(0));
 		
 		utilitzades(characterInput);
-
-		if("prou".equals(adivinaLletra)){ //aún pensar lógica 
-			
-			return true;
+		
+/*		if(par.contains(elements)){
+			characterInput.add(Character.toUpperCase(elements.charAt(0)));
+			System.out.println("caca");
+			return true;			
 		}
-		return false;
+		if(adivinaLletra.length() != characterInput.size()){
+			intents--;
+			return true;
+		}	
+*/		return par.contains(adivinaLletra);
    	}
-
 	public static void utilitzades(List<Character> characterInput){
-	for(char c: characterInput){
-		System.out.println(characterInput);
-	}
-	
+		String output = "Utilitzades: ";	
+		for(int i=0; i < characterInput.size(); i++){
+			if(i == characterInput.size()-2){
+				output += characterInput.get(i) + " i ";
+			}
+			else if(i == characterInput.size()-1){
+				output += characterInput.get(i);
+			}
+			else{
+				output += characterInput.get(i) + ", ";
+			}
+		}
+		System.out.println(output);
 	}	
-
 }	
-/*for(int i = 0; i < args.length; i++){
-
-                if(i == args.length-2){
-                        System.out.print(args[i] + " i ");
-                }
-
-                else if(i == args.length-1){
-                        System.out.println(args[i]);
-                }
-                else{
-                        System.out.print(args[i] + ", ");
-                }
-        }
-
-        System.out.println();
-    }
-*/
