@@ -15,21 +15,23 @@ public class penjatDani {
 	
 	path.close();
 
-	Random rand = new Random(); // declaramos la clase random
-	String randParaules = paraules.get(rand.nextInt(paraules.size())); //creamos un string donde vamos a ir llamando palabras random del array
-	System.out.println(randParaules); // ayudita para ver las palabras random que salen, de algun modo se suelen repetir seguidamente pd: preguntar al Moisès
+	String par = paraules.get(paraules.size()-1);
+
+//	Random rand = new Random();// declaramos la clase random
+//	String randParaules = paraules.get(rand.nextInt(paraules.size()));//creamos un string donde vamos a ir llamando palabras random del array
+	System.out.println(par); // ayudita para ver las palabras random que salen, de algun modo se suelen repetir seguidamente pd: preguntar al Moisès
 	
 	List<Character> characterInput = new ArrayList<>(); // declaramos el arralist de chars
-	danifunciones.paraulaRandomActual(randParaules, characterInput); //llamamos a la clase con la funcion donde va a ir sustituyendo los asterisks
+	danifunciones.paraulaRandomActual(par, characterInput); //llamamos a la clase con la funcion donde va a ir sustituyendo los asterisks
 	
 	while(true){ //loopify
-		if(danifunciones.adivinaJugador(entrada, randParaules, characterInput)){
+		if(danifunciones.adivinaJugador(entrada, par, characterInput)){
 			System.out.println("Mostrar las estadísticas");
 			break;
 		}
 		
-		if(danifunciones.paraulaRandomActual(randParaules, characterInput)){	
-			System.out.println("Has encertat! La paraula era " + randParaules);		
+		if(danifunciones.paraulaRandomActual(par, characterInput)){	
+			System.out.println("Has encertat! La paraula era " + par);		
 			break;
 		}
 	}
