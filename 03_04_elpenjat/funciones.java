@@ -10,13 +10,16 @@ array char
     añadir letras
  */
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class funciones {
 
 
     public static void mostraFigura(int intentsDisponibles) throws IOException{
 
-        int i=10;
+        int i=11;
         int num=i-intentsDisponibles;
         if(num>0){
             String txt = "recursos/figura"+num+".txt";
@@ -26,12 +29,17 @@ public class funciones {
 
                 System.out.println(linea);
             }
+            input.close();
         }
-        input.close();
+        
 
     }
+     public static int intentos(int i_intentos){
+            i_intentos--;
+         return i;
+     }
     
-    public static void estadisticas(int i_jugades, i_encertades,i_fallades,i_cancelades) {
+    public static void estadisticas(int i_jugades, int i_encertades,int i_fallades,int i_cancelades) {
         System.out.println("Paraules jugades: "+i_jugades);
         System.out.println("Paraules encertades: "+i_encertades);
         System.out.println("Paraules fallades: "+i_fallades);

@@ -30,12 +30,12 @@ public class penjatDani {
 	
 	List<Character> characterInput = new ArrayList<>(); // declaramos el arralist de chars
 	danifunciones.paraulaRandomActual(par, characterInput); //llamamos a la clase con la funcion donde va a ir sustituyendo los asterisks
-	
+	System.out.println("Comencem a jugar");
 	while(true){ //loopify
-        System.out.println("Comencem a jugar");
+        
         
 		if(danifunciones.adivinaJugador(entrada, par, characterInput)){
-			System.out.println("Mostrar las estadísticas");
+        funciones.estadisticas(i_jugades,i_encertades,i_fallades,i_cancelades);
 		}else{
             funciones.mostraFigura(i_intents);
         }
@@ -47,12 +47,10 @@ public class penjatDani {
              i_fallades++;
         }
         
-        if(!danifunciones.paraulaRandomActual(par, characterInput)){
-            i_intentos--;
-        }
-        System.out.println("Intents disponibles: "+i_intentos);
+        //falta bajar el intento ( i_intents-- )
+        System.out.println("Intents disponibles: "+funciones.intentos(i_intentos));
         
-        funciones.estadisticas(i_jugades,i_encertades,i_fallades,i_cancelades);
+        
 	}
 
    }

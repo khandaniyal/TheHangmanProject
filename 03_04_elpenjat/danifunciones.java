@@ -14,6 +14,7 @@ public class danifunciones {
 			contadorCorrectes++;
 		}
 		else{
+            
 			System.out.print("*");
 		}
 	}
