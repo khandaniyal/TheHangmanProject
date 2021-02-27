@@ -11,13 +11,13 @@ public class penjatDani {
         int i_cancelades=0;
         
         
-		BufferedReader entrada = new BufferedReader (new InputStreamReader (System.in)); //user input		
+		BufferedReader entrada = new BufferedReader (new InputStreamReader (System.in));		
 	
-	BufferedReader path = new BufferedReader(new FileReader("recursos/paraules.txt")); //path de las palabras wey
-	List<String> paraules = new ArrayList<>(); //declaramos la lista donde vamos a guardar las palabras
+	BufferedReader path = new BufferedReader(new FileReader("recursos/paraules.txt"));
+	List<String> paraules = new ArrayList<>();
 	String currentLine = "";	
 	while((currentLine = path.readLine()) != null){
-		paraules.add(currentLine); //añadimos las palabras a la lista de Strings
+		paraules.add(currentLine); 
 	}
 	
 	path.close();
@@ -25,11 +25,11 @@ public class penjatDani {
 	String par = paraules.get(paraules.size()-1);
 
 //	Random rand = new Random();// declaramos la clase random
-//	String randParaules = paraules.get(rand.nextInt(paraules.size()));//creamos un string donde vamos a ir llamando palabras random del array
-	System.out.println(par); // ayudita para ver las palabras random que salen, de algun modo se suelen repetir seguidamente pd: preguntar al Moisès
+//	String randParaules = paraules.get(rand.nextInt(paraules.size()));
+	System.out.println(par);
 	
-	List<Character> characterInput = new ArrayList<>(); // declaramos el arralist de chars
-	danifunciones.paraulaRandomActual(par, characterInput); //llamamos a la clase con la funcion donde va a ir sustituyendo los asterisks
+	List<Character> characterInput = new ArrayList<>();
+	danifunciones.paraulaRandomActual(par, characterInput);
 	
 	while(true){ //loopify
         System.out.println("Comencem a jugar");

@@ -42,10 +42,8 @@ public class danifunciones {
    	}
 
 	public static void utilitzades(List<Character> characterInput){
-	for(int i=0; i < characterInput.size(); i++){
-		if(characterInput.isEmpty()){
-			System.out.println("Utilitzades: cap");
-		}
+	for(char c: characterInput){
+		System.out.println(characterInput);
 	}
 	
 	}	
@@ -68,5 +66,3 @@ public class danifunciones {
         System.out.println();
     }
 */
-=======
->>>>>>> 71770e7d1bfd5158b4e9dc34116b8083f54fa2ac
