@@ -51,8 +51,6 @@ public class danifunciones {
 	}	
 
 }	
-
-
 /*for(int i = 0; i < args.length; i++){
 
                 if(i == args.length-2){
@@ -70,3 +68,5 @@ public class danifunciones {
         System.out.println();
     }
 */
+=======
+>>>>>>> 71770e7d1bfd5158b4e9dc34116b8083f54fa2ac
