@@ -35,6 +35,12 @@ public class penjatDani {
 	
 	while(true){//loopify
 	
+        if(i_intents==0){
+            funciones.estadisticas(i_jugades, i_encertades, i_fallades, i_cancelades);
+            break;
+        }
+        
+        
 		if(!danifunciones.adivinaJugador(entrada, par, characterInput)){
 			i_intents--; // he tenido que hacerlo manual :(
 			funciones.mostraFigura(i_intents);
@@ -46,9 +52,9 @@ public class penjatDani {
 		else{
              		i_fallades++;
         	}
-       	 	//falta bajar el intento ( i_intents-- )
         	System.out.println("Intents disponibles: "+funciones.intentos(i_intents));
-        }
-        //funciones.estadisticas(i_jugades, i_encertades, i_fallades, i_cancelades);
+            
+    }
+        
    }
 }
