@@ -1,17 +1,13 @@
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.List;
 import java.util.Random;
 import java.io.*; 
-public class penjatDani {
-	public static void main(String[] args)throws IOException {
+public class penjatDani extends funciones{
+	public static void main(String[] args)throws IOException{
 		BufferedReader entrada = new BufferedReader (new InputStreamReader (System.in));		
-        
-	int i_intents=11;
-        int i_jugades=0;
-        int i_encertades=0;
-        int i_fallades=0;
-        int i_cancelades=0;
-       	
+       
+       // En vez de declarar las variables de los contadores, las he declarado en tu class de funciones y le añadido el extends al nuestro
+	
 	BufferedReader path = new BufferedReader(new FileReader("recursos/paraules.txt"));
 	List<String> paraules = new ArrayList<>();
 	String currentLine = "";	
@@ -31,7 +27,7 @@ public class penjatDani {
 	System.out.println("Comencem a jugar");
 	danifunciones.paraulaActual(par, characterInput);
 	System.out.println("Utilitzades: cap");
-        System.out.println("Intents disponibles: "+funciones.intentos(i_intents));
+        System.out.println("Intents disponibles: " + funciones.intentos(i_intents));
 	
 	while(true){//loopify
 	
@@ -41,14 +37,16 @@ public class penjatDani {
 		}		        
 		if(danifunciones.paraulaActual(par, characterInput)){	
             		i_encertades++;
-			System.out.println("Has encertat! La paraula era " + par);		
+			System.out.println("Has encertat! La paraula era " + par);
+			break;
 		}
 		else{
              		i_fallades++;
+			
         	}
-       	 	//falta bajar el intento ( i_intents-- )
         	System.out.println("Intents disponibles: "+funciones.intentos(i_intents));
         }
-        //funciones.estadisticas(i_jugades, i_encertades, i_fallades, i_cancelades);
+	//Las estadísticas ya funcionan, falta mejorar un poquillo y ale
+        funciones.estadisticas(i_jugades, i_encertades, i_fallades, i_cancelades);
    }
 }
