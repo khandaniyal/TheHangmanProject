@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.*;
 public class danifunciones {	
+	
 	public static boolean paraulaActual(String par, List<Character> characterInput){
 		String output = "Paraula: ";
 		int contadorCorrectes = 0;
@@ -47,13 +48,13 @@ public class danifunciones {
 		String output = "Utilitzades: ";	
 		for(int i=0; i < characterInput.size(); i++){
 			if(i == characterInput.size()-2){
-				output += characterInput.get(i) + " i ";
+				output += Character.toUpperCase(characterInput.get(i)) + " i ";
 			}
 			else if(i == characterInput.size()-1){
-				output += characterInput.get(i);
+				output += Character.toUpperCase(characterInput.get(i));
 			}
 			else{
-				output += characterInput.get(i) + ", ";
+				output += Character.toUpperCase(characterInput.get(i)) + ", ";
 			}
 		}
 		System.out.println(output);
