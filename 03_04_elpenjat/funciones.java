@@ -15,13 +15,18 @@ import java.util.List;
 
 
 public class funciones {
-
-
+	
+	public static int i_intents=11;
+        public static int i_jugades=0;
+        public static int i_encertades=0;
+        public static int i_fallades=0;
+	public static int i_cancelades=0;
+    
     public static void mostraFigura(int intentsDisponibles) throws IOException{
 
-        int i=11;
+        int i=10;
         int num=i-intentsDisponibles;
-        if(num>0){
+        if(num>=0){
             String txt = "recursos/figura"+num+".txt";
             BufferedReader input = new BufferedReader(new FileReader(txt));
             String linea = "";
