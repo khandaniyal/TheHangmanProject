@@ -24,9 +24,9 @@ public class funciones {
 	
     public static void mostraFigura(int intentsDisponibles) throws IOException{
 
-        int i=11;
+        int i=10;
         int num=i-intentsDisponibles;
-        if(num>0){
+        if(num>=0){
             String txt = "recursos/figura"+num+".txt";
             BufferedReader input = new BufferedReader(new FileReader(txt));
             String linea = "";

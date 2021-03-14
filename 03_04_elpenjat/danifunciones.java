@@ -8,6 +8,7 @@ public class danifunciones {
 		int contadorCorrectes = 0;
 		for(int i=0; i < par.length(); i++){
 			if(characterInput.contains(par.charAt(i))){
+                //falta condicion que si sale prou use funciones.estadisticas
 				output += par.charAt(i);
 				contadorCorrectes++;
 			}

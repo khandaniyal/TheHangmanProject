@@ -12,15 +12,14 @@ public class penjatDani extends funciones{
 	while((currentLine = path.readLine()) != null){
 		paraules.add(currentLine); 
 	}	
-	path.close();
 
 	String par = ""; //paraules.get(paraules.size()-1);
 
 /*	Random rand = new Random();// declaramos la clase random
 	String randParaules = paraules.get(rand.nextInt(paraules.size()));
 */	
-	System.out.println("HINT: " + par + "\n");
 	List<Character> characterInput = new ArrayList<>();
+	System.out.println("HINT: " + par + "\n");
 	
 	System.out.println("Comencem a jugar");
 	danifunciones.paraulaActual(par, characterInput);
@@ -68,4 +67,30 @@ public class penjatDani extends funciones{
         	}		
 	}
    }
+	
+	while(true){//loopify
+        	
+		if(i_intents==0){
+            		funciones.estadisticas(i_jugades, i_encertades, i_fallades, i_cancelades);
+            		break;
+        	}
+		if(!danifunciones.adivinaJugador(entrada, par, characterInput)){
+			i_intents--; // he tenido que hacerlo manual :(
+			funciones.mostraFigura(i_intents);
+		}		        
+		if(danifunciones.paraulaActual(par, characterInput)){	
+            		i_encertades++;
+			System.out.println("Has encertat! La paraula era " + par);
+			
+		}
+		else{
+             		i_fallades++;
+			
+        	}
+        	System.out.println("Intents disponibles: "+funciones.intentos(i_intents));
+        }
+	path.close();
+   }
+	//Las estadísticas ya funcionan, falta mejorar un poquillo y ale
+        funciones.estadisticas(i_jugades, i_encertades, i_fallades, i_cancelades);
 }
