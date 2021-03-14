@@ -18,6 +18,7 @@ public class danifunciones {
 		}
 		System.out.println(output);	
 		
+		
 		if(par.length() == contadorCorrectes){
 			return true;
 		}
@@ -25,24 +26,19 @@ public class danifunciones {
 			return false;
 		}
 	}
-	public static boolean adivinaJugador(BufferedReader entrada, String par, List<Character> characterInput) throws IOException{
-		System.out.println("Introdueix una lletra");
-        	String adivinaLletra = entrada.readLine();  //input de las letras que vas a adivinar
-        	characterInput.add(adivinaLletra.charAt(0)); //añade la primera letra del string al arraylist de chars
-		//String elements = Character.toString(adivinaLletra.charAt(0));
+	public static boolean adivinaJugador(BufferedReader entrada, String par, List<Character> characterInput, String adivinaLletra) throws IOException{
+		boolean caca = true;
+		if("prou".equals(adivinaLletra) || "glups".equals(adivinaLletra)){
+			caca = false;
+		}else{
 		
-		utilitzades(characterInput);
-		
-/*		if(par.contains(elements)){
-			characterInput.add(Character.toUpperCase(elements.charAt(0)));
-			System.out.println("caca");
-			return true;			
+			characterInput.add(adivinaLletra.charAt(0));
+			utilitzades(characterInput);
 		}
-		if(adivinaLletra.length() != characterInput.size()){
-			intents--;
-			return true;
-		}	
-*/		return par.contains(adivinaLletra);
+		if(par.contains(adivinaLletra)){
+			caca = true;
+		}
+		return caca;
    	}
 	public static void utilitzades(List<Character> characterInput){
 		String output = "Utilitzades: ";	
@@ -58,5 +54,8 @@ public class danifunciones {
 			}
 		}
 		System.out.println(output);
-	}	
+	}
+	public static boolean checkInput(String adivinaLletra){
+	return(adivinaLletra.matches("[À-ÿ]"));
+	}
 }	

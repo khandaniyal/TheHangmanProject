@@ -21,7 +21,7 @@ public class funciones {
         public static int i_encertades=0;
         public static int i_fallades=0;
 	public static int i_cancelades=0;
-    
+	
     public static void mostraFigura(int intentsDisponibles) throws IOException{
 
         int i=10;
