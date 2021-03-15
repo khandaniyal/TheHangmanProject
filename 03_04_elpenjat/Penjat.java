@@ -8,10 +8,10 @@ import java.util.List;
 import java.io.*; 
 public class Penjat{
 	public static void main(String[] args)throws IOException{
-		BufferedReader entrada = new BufferedReader (new InputStreamReader (System.in));		
+		BufferedReader entrada = new BufferedReader (new InputStreamReader (System.in)); //BufferedReader solo para el input		
        
 	BufferedReader path = new BufferedReader(new FileReader("recursos/paraules.txt"));
-	List<String> paraules = new ArrayList<>(); //Lista donde vamos almacenar las palabras del .txt
+	List<String> paraules = new ArrayList<>(); //Lista donde vamos almacenar las palabras del ".txt"
 	String currentLine = "";	
 	// Iteramos por cada una de las palabras y las añadimos a la lista de palabras
 	while((currentLine = path.readLine()) != null){
@@ -39,27 +39,27 @@ public class Penjat{
 				funciones.estadisticas(funciones.i_jugades, funciones.i_encertades, funciones.i_fallades, funciones.i_cancelades);
 				return;
 			}
-			else if("glups".equals(adivinaLletra)){
+			else if("glups".equals(adivinaLletra)){ // Reiniciamos los intentos, la lista de chars y sumamos una palabra cancelada
 				funciones.i_cancelades++;
 				characterInput = new ArrayList<>();
 				funciones.i_intents = 10;
 				break;
 			}	
-			else if(danifunciones.checkInput(adivinaLletra)){ 
+			else if(danifunciones.checkInput(adivinaLletra)){ //Si el char introducido contiene acento devuelve true
 				System.out.println("Error: cal una lletra entre 'a' i 'z', 'prou' o 'glups'");
 				continue;	
 			}
-			else if(adivinaLletra.length() > 1){ //quelcom
+			else if(adivinaLletra.length() > 1){ //"quelcom" o un string que no sea "glups" o "prou"
 				System.out.println("Error: cal una lletra entre 'a' i 'z', 'prou' o 'glups'");	
 				danifunciones.paraulaActual(par, characterInput);
 				continue;
 			}
-			if(danifunciones.checkUtilitzades(characterInput, adivinaLletra)){
+			if(danifunciones.checkUtilitzades(characterInput, adivinaLletra)){ //Funcion que comprueba si el char ya existe 
 				System.out.println("La lletra ja ha estat utilitzada");
 				danifunciones.paraulaActual(par, characterInput);
 				continue;
 			} 
-			if(funciones.i_intents == 1){
+			if(funciones.i_intents == 1){ //Si no aciertas cada char de la palabra actual y los intentos llegan a uno, le ded, pasa a la siguiente iteración
 				mostraFigura(0);
 				System.out.println("Has mort");
 				characterInput = new ArrayList<>();
@@ -68,11 +68,11 @@ public class Penjat{
 				break;	
 			}
 			
-			if(danifunciones.adivinaJugador(entrada, par, characterInput, adivinaLletra)){ 
+			if(danifunciones.adivinaJugador(entrada, par, characterInput, adivinaLletra)){ //Funcion donde comprueba el input del jugador
 				funciones.i_intents--;
 				mostraFigura(funciones.i_intents);
 			}
-			if(danifunciones.paraulaActual(par, characterInput)){ 	
+			if(danifunciones.paraulaActual(par, characterInput)){ //Funcion donde comprueba si aciertas la palabra y donde sustituye el "*" por el char que contenga la palabra
             			funciones.i_encertades++;
 				characterInput = new ArrayList<>();
 				System.out.println("Has encertat! La paraula era " + par);
@@ -84,7 +84,7 @@ public class Penjat{
 	System.out.println("No queden més paraules");
 	funciones.estadisticas(funciones.i_jugades, funciones.i_encertades, funciones.i_fallades, funciones.i_cancelades);
    }
-   	// procedimiento que recorre las figuras
+   	// procedimiento que recorre las figuras y la muestra
 	public static void mostraFigura(int intentsDisponibles) throws IOException{
         int i = 10;
         int num = i - intentsDisponibles;
