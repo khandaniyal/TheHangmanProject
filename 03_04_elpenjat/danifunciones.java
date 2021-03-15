@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.*;
 public class danifunciones {	
-	//Funcion donde comprueba la palabra actual, si tiene el char de la palabra lo sustituye por el * y si la palabra coincide con el contador por cada char como input pues devuelve true
+	//Funcion donde comprueba la palabra actual, si tiene el char de la palabra lo sustituye por el * y si la palabra coincide con el contador, por cada char como input devuelve true
 	public static boolean paraulaActual(String par, List<Character> characterInput){
 		String output = "Paraula: ";
 		int contadorCorrectes = 0;
@@ -19,7 +19,7 @@ public class danifunciones {
 				output += "*";
 			}
 		}
-		if(par.length() != contadorCorrectes){
+		if(par.length() != contadorCorrectes){ //En caso de que la palabra sea diferente al contador, no hará falta mostrar el ultimo char utilizado
 			System.out.println(output);
 			utilitzades(characterInput);
 		}
@@ -31,7 +31,7 @@ public class danifunciones {
 		boolean checkCharAndString = true;
 	
 		if(!("prou".equals(adivinaLletra) || "glups".equals(adivinaLletra) || adivinaLletra.length() > 1)){
-			checkUtilitzades(characterInput, adivinaLletra);
+			checkUtilitzades(characterInput, adivinaLletra); //Llamamos a la funcion donde comprueba si el input del char ya existe
 		}		
 		if(par.contains(adivinaLletra)){
 			checkCharAndString = false;
@@ -49,7 +49,7 @@ public class danifunciones {
 		}
 		else{
 			for(int i=0; i < characterInput.size(); i++){
-				if(i == characterInput.size()-2){
+				if(i == characterInput.size()-2){ 
 					output += Character.toUpperCase(characterInput.get(i)) + " i ";
 				}
 				else if(i == characterInput.size()-1){
@@ -62,11 +62,11 @@ public class danifunciones {
 		System.out.println(output);
 		}
 	}
-	//Funcion regex que devuelve true si usa chars con acentos
+	//Funcion regex que devuelve true si el input contiene acentos
 	public static boolean checkInput(String adivinaLletra){
 		return(adivinaLletra.matches("[À-ÿ]"));
 	}
-	//Funcion que comprueba que chars han sido utilizados y que no los repita
+	//Funcion que comprueba si los chars han sido utilizados previamente y que no los muestre
 	public static boolean checkUtilitzades(List<Character> characterInput, String adivinaLletra){
 	
 		boolean checkChar = false;
