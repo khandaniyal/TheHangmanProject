@@ -12,7 +12,7 @@ public class funciones {
 	public static int i_cancelades=0;
 	
 //Procedimiento que muestra las estadisticas	
-public static void estadisticas(int i_jugades, int i_encertades,int i_fallades,int i_cancelades) {
+public static void estadisticas(int i_jugades, int i_encertades, int i_fallades, int i_cancelades) {
         System.out.println("Paraules jugades: " + i_jugades);
         System.out.println("Paraules encertades: " + i_encertades);
         System.out.println("Paraules fallades: " + i_fallades);
