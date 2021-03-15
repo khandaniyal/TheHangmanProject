@@ -1,5 +1,6 @@
 /*
- * Funciones 1, contadores y estadísticas 
+ * Funciones 1, contadores y estadísticas
+ *
  */
 
 public class funciones {
