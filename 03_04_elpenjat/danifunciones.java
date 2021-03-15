@@ -1,5 +1,6 @@
 /*
- * Clase con las funciones para la lógica del programa
+ *Funciones 2 
+ *Clase con las funciones para la lógica del programa
  */
 
 import java.util.ArrayList;
