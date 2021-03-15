@@ -1,6 +1,7 @@
 /*
  * Main donde hemos monstado el Hangman usando la diferentes funciones.
  * El programa es el famoso juego del Ahorcado.
+ *
  */
 
 import java.util.ArrayList; 
