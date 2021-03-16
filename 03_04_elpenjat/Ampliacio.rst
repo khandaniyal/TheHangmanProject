@@ -1,0 +1,6 @@
+################
+AMPLIACIÓN  
+################
+
+- Agregado nuevas figuras.
+
